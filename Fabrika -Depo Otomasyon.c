@@ -14,7 +14,7 @@ int kontrol(char *b){
 	u=strlen(b);
 	while(i<u)
 	{
-	 if(isdigit(*b)==0)   //Girilen karakterin sayı olup olmadığı kontrol edilip sayı ise 1 değilse 0 değeri veriliyor
+	 if(isdigit(*b)==0)   //Girilen karakterin sayÄ± olup olmadÄ±ÄŸÄ± kontrol edilip sayÄ± ise 1 deÄŸilse 0 deÄŸeri veriliyor
 	{
 	sonuc=0;
 	break;
@@ -30,10 +30,10 @@ void calisanekle(int b){
 	int i=0;
 	char *p;
 	int k=0;
-	p=(char*)malloc((sizeof(char)*40)*5); //  Bu fonksiyon içerisinde çalışan bilgilerini içerisinde depolayacak bir pointer dizi oluşturuyoruz
+	p=(char*)malloc((sizeof(char)*40)*5); //  Bu fonksiyon iÃ§erisinde Ã§alÄ±ÅŸan bilgilerini iÃ§erisinde depolayacak bir pointer dizi oluÅŸturuyoruz
 
 	printf("**Isim :");
-	 scanf("%s",p);    // Burada kullanıcıdan scanf komutu ile aldığımız çalışan bilgilerini p dizimize kaydediyoruz
+	 scanf("%s",p);    // Burada kullanÄ±cÄ±dan scanf komutu ile aldÄ±ÄŸÄ±mÄ±z Ã§alÄ±ÅŸan bilgilerini p dizimize kaydediyoruz
 	printf("**Soyisim :");
 	 scanf("%s",p+20);
 	printf("**Cinsiyet :");
@@ -45,21 +45,21 @@ void calisanekle(int b){
 
     printf("\n\n");
 
-    system("cls");	//Ekranı temizliyoruz
+    system("cls");	//EkranÄ± temizliyoruz
 
-	FILE *fabrika;    // Burada FILE komutu ile dosya işlemlerinde kullanıcağımızı belittiğimiz bir dosya pointeri açıyoruz
+	FILE *fabrika;    // Burada FILE komutu ile dosya iÅŸlemlerinde kullanÄ±caÄŸÄ±mÄ±zÄ± belittiÄŸimiz bir dosya pointeri aÃ§Ä±yoruz
 
-	if((fabrika=fopen("calisanbilgileri.txt","a"))!=0) // calisanbilgileri.txt dosyamızı  ekleme yapmak için a modu ile açıyoruz
+	if((fabrika=fopen("calisanbilgileri.txt","a"))!=0) // calisanbilgileri.txt dosyamÄ±zÄ±  ekleme yapmak iÃ§in a modu ile aÃ§Ä±yoruz
 	{
 
-   printf("\n\t%s\t%s\t%s\t%s\t%s\n",strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),strupr(p+80)); // Kaydedilen çalışan adlarını burada listeliyoruz
-   fprintf(fabrika,"%d\t%s\t%s\t%s\t%s\t%s\n",b+1,strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),strupr(p+80)); // Çalışan bilgilerini dosyamıza yazıyoruz
+   printf("\n\t%s\t%s\t%s\t%s\t%s\n",strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),strupr(p+80)); // Kaydedilen Ã§alÄ±ÅŸan adlarÄ±nÄ± burada listeliyoruz
+   fprintf(fabrika,"%d\t%s\t%s\t%s\t%s\t%s\n",b+1,strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),strupr(p+80)); // Ã‡alÄ±ÅŸan bilgilerini dosyamÄ±za yazÄ±yoruz
 
    printf("\n\n\t** Calisan Basarili Bir Sekilde Eklendi. **");
 	}
 	
 	else printf("Dosya Bulunamadi.");
-	free(p);		//p değişkeninin değer atamasının silinmesi 
+	free(p);		//p deÄŸiÅŸkeninin deÄŸer atamasÄ±nÄ±n silinmesi 
    fflush(fabrika);
    fclose(fabrika);
 }
@@ -68,16 +68,16 @@ int calisanListele(int c){
 	char *ad,*sad,*cins,*dep,secim[10];
 	int *sira,i=0,b,sec,a=1;
     char *va;
-	ad=(char*)malloc((sizeof(char)*20)*c); // Burada doyadan çeilecek verilerin depolanacağı  pointer diziler oluşturuyoruz.
+	ad=(char*)malloc((sizeof(char)*20)*c); // Burada dosyadan Ã§ekilecek verilerin depolanacaÄŸÄ±  pointer diziler oluÅŸturuyoruz.
 	sad=(char*)malloc((sizeof(char)*20)*c);
 	cins=(char*)malloc((sizeof(char)*20)*c);
 	dep=(char*)malloc((sizeof(char)*20)*c);
     va=(char*)malloc((sizeof(char)*20)*c);
 	sira=(int*)calloc(sizeof(int),c);
 	FILE *fabrika;
-	if((fabrika=fopen("calisanbilgileri.txt","r"))!=0)  // calisanbilgiler.txt dosyamızı okuma modunda açıyoruz
+	if((fabrika=fopen("calisanbilgileri.txt","r"))!=0)  // calisanbilgiler.txt dosyamÄ±zÄ± okuma modunda aÃ§Ä±yoruz
 	{
-	while(!feof(fabrika)) // feof fonksiyonu ile açılan dosyanın sonuna gelinceye kadar pointer dizilerine verileri yazıyoruz
+	while(!feof(fabrika)) // feof fonksiyonu ile aÃ§Ä±lan dosyanÄ±n sonuna gelinceye kadar pointer dizilerine verileri yazÄ±yoruz
 	{
 
 		fscanf(fabrika,"%d\t%s\t%s\t%s\t%s\t%s\t\n",(sira+i),(ad+i*20),(sad+i*20),(cins+i*20),(dep+i*20),(va+i*20));
@@ -91,10 +91,10 @@ int calisanListele(int c){
 	
 
 	}
-	fclose(fabrika); // İşlem bitince dosyamızı kapatıyoruz
+	fclose(fabrika); // Ä°ÅŸlem bitince dosyamÄ±zÄ± kapatÄ±yoruz
 	}
 
-	else printf("Dosya bulunamadi."); // Eğer dosya yok ise uyarı vermesini istiyoruz
+	else printf("Dosya bulunamadi."); // EÄŸer dosya yok ise uyarÄ± vermesini istiyoruz
 	
 	i=0;
 	b=1;
@@ -102,12 +102,12 @@ int calisanListele(int c){
 	printf("     ISIM \tSOYISIM \t CINSIYET \t DEPARTMAN \t VARDIYA \n");
 	printf("     -----\t--------\t ---------\t ----------\t ---------\n");
 
-	while(i<c) // Dosyadaki kişi sayısı kadar döndürüyoruz
+	while(i<c) // Dosyadaki kiÅŸi sayÄ±sÄ± kadar dÃ¶ndÃ¼rÃ¼yoruz
 	{
 		if(i<b*20 && i<c)
 		{
 
-   		 printf("%d )  %-11s%-17s%-16s%-16s%s\t\n",*(sira+i),(ad+i*20),(sad+i*20),(cins+i*20),(dep+i*20),(va+i*20)); // Çalışan bilgilerini ekrana yazdırıyoruz
+   		 printf("%d )  %-11s%-17s%-16s%-16s%s\t\n",*(sira+i),(ad+i*20),(sad+i*20),(cins+i*20),(dep+i*20),(va+i*20)); // Ã‡alÄ±ÅŸan bilgilerini ekrana yazdÄ±rÄ±yoruz
 
 			i++;
 			
@@ -117,14 +117,14 @@ int calisanListele(int c){
 			printf("\n\t%d.Sayfadasiniz.\tToplam Sayfa :%d\n1-)Onceki Sayfa\t0-)Ana menu\n",b,a);
 			printf("Secim Yap  :");
 
-			scanf("%s",secim); // Çalışan listeleme ekranında sayfalar arasında geçiş yapmak için sayfa bilgisini alıyoruz
+			scanf("%s",secim); // Ã‡alÄ±ÅŸan listeleme ekranÄ±nda sayfalar arasÄ±nda geÃ§iÅŸ yapmak iÃ§in sayfa bilgisini alÄ±yoruz
 		
 			while(kontrol(secim)==0)	
 			{
 		
 			printf("Lutfen Gecerli Bir Deger Giriniz :");scanf("%s",secim);
 			}
-			sec=atoi(secim);	//Seçim değişkenini integer değere dönüştürüyoruz 
+			sec=atoi(secim);	//SeÃ§im deÄŸiÅŸkenini integer deÄŸere dÃ¶nÃ¼ÅŸtÃ¼rÃ¼yoruz 
 		
 			while(b==1 && sec==1)
 			{
@@ -135,7 +135,7 @@ int calisanListele(int c){
 			}
 			sec=atoi(secim);	
 
-			while(atoi(secim)>1 || atoi(secim)<0 || kontrol(secim)==0){		//Seçim menüsünde olmayan bir seçim yapıldı mı kontrol ediliyor
+			while(atoi(secim)>1 || atoi(secim)<0 || kontrol(secim)==0){		//SeÃ§im menÃ¼sÃ¼nde olmayan bir seÃ§im yapÄ±ldÄ± mÄ± kontrol ediliyor
 			    printf("Yanlis Secim Yaptiniz :");
 			    scanf("%s",secim);
 
@@ -144,7 +144,7 @@ int calisanListele(int c){
 		
 			system("cls");
         
-		    	printf("    ISIM\tSOYISIM \t CINSIYET \t DEPARTMAN \t ISBASI SAATI \n");	//Listeleme ekranının başlıklarının oluşturulması 
+		    	printf("    ISIM\tSOYISIM \t CINSIYET \t DEPARTMAN \t ISBASI SAATI \n");	//Listeleme ekranÄ±nÄ±n baÅŸlÄ±klarÄ±nÄ±n oluÅŸturulmasÄ± 
 				printf("    -----\t--------\t ---------\t ----------\t -------------\n");
 		
 			switch(sec)
@@ -165,12 +165,12 @@ int calisanListele(int c){
 		else
 		{
 			
-		printf("\t%d.Sayfadasiniz.\tToplam Sayfa :%d\n1-)Onceki Sayfa\t2-)Sonraki Sayfa\t 0-)Ana Menu\n",b,a); //Listelemenin sonunda bulunan sayfa bilgisi ve seçim elemanlarının oluşturulması
+		printf("\t%d.Sayfadasiniz.\tToplam Sayfa :%d\n1-)Onceki Sayfa\t2-)Sonraki Sayfa\t 0-)Ana Menu\n",b,a); //Listelemenin sonunda bulunan sayfa bilgisi ve seÃ§im elemanlarÄ±nÄ±n oluÅŸturulmasÄ±
 		printf("Secim Yap  :");
 		scanf("%s",secim);
 		sec=atoi(secim);
 	
-		while( (b==1 && sec==1) || sec<0 || sec>2 || kontrol(secim)==0){	//Yapılan seçim menü tuşlarında yer alıyor mu kontrolünün yapılması 
+		while( (b==1 && sec==1) || sec<0 || sec>2 || kontrol(secim)==0){	//YapÄ±lan seÃ§im menÃ¼ tuÅŸlarÄ±nda yer alÄ±yor mu kontrolÃ¼nÃ¼n yapÄ±lmasÄ± 
 
 			if(sec==1)
 			{
@@ -189,7 +189,7 @@ int calisanListele(int c){
 	
 		if(sec==0){
 		printf("Devam Etmek Icin Bir Tusaa Basin.");
-		break;	//Ana menüye dönüşün yapılması 
+		break;	//Ana menÃ¼ye dÃ¶nÃ¼ÅŸÃ¼n yapÄ±lmasÄ± 
 		}
 	
 		system("cls");
@@ -213,7 +213,7 @@ int calisanListele(int c){
 		
 		}
 	}
-	free(ad);		//Değişkenlerin değer boşaltması yapılması 
+	free(ad);		//DeÄŸiÅŸkenlerin deÄŸer boÅŸaltmasÄ± yapÄ±lmasÄ± 
 	free(sad);
 	free(cins);
 	free(dep);
@@ -226,7 +226,7 @@ void calisansil(int b){
 	char *ad,*sa,*ci,*de,sil[10],*sira;
 	int silinen,i=0,j=0,eleman;
 	char *va;
-	ad=(char*)malloc((sizeof(char)*20*4)*b);	//Değerlerin yer aldığı bellek yerlerinin ayarlanması
+	ad=(char*)malloc((sizeof(char)*20*4)*b);	//DeÄŸerlerin yer aldÄ±ÄŸÄ± bellek yerlerinin ayarlanmasÄ±
 	sa=(char*)malloc((sizeof(char)*20*4)*b);
 	ci=(char*)malloc((sizeof(char)*20*4)*b);
 	de=(char*)malloc((sizeof(char)*20*4)*b);
@@ -235,7 +235,7 @@ void calisansil(int b){
 	
 	int k;
 	
-	printf("\n\t*****************************************\n");	//Menü oluşturulması 
+	printf("\n\t*****************************************\n");	//MenÃ¼ oluÅŸturulmasÄ± 
 	printf("\t***                                  ****\n");
 	printf("\t***       0 -) ANA MENU              ****\n");
 	printf("\t***                                  ****\n");
@@ -244,7 +244,7 @@ void calisansil(int b){
 	printf("\t***  Silinecek Calisan Numarasi  :  ");
 	scanf("%s",sil);
 	
-	while(kontrol(sil)==0 || atoi(sil)<0 ||atoi(sil)>b)	// Girilen değerde çalışan var mı kontrolü yapılması 
+	while(kontrol(sil)==0 || atoi(sil)<0 ||atoi(sil)>b)	// Girilen deÄŸerde Ã§alÄ±ÅŸan var mÄ± kontrolÃ¼ yapÄ±lmasÄ± 
 	{
 	
 	printf("Lutfen Gecerli Bir Calisan Numarasi Giriniz  :");
@@ -260,7 +260,7 @@ void calisansil(int b){
 
 	while(!feof(fabrika)){
 
-	fscanf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",(sira+i),(ad+i*20),(sa+i*20),(ci+i*20),(de+i*20),(va+i*20));	//Dosyadan verilerin alınması
+	fscanf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",(sira+i),(ad+i*20),(sa+i*20),(ci+i*20),(de+i*20),(va+i*20));	//Dosyadan verilerin alÄ±nmasÄ±
 	i++;
 	}
 	
@@ -276,7 +276,7 @@ void calisansil(int b){
 	while((i+1)!=silinen && i<b)
 	{
 		
-	fprintf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",*(sira+j),(ad+i*20),(sa+i*20),(ci+i*20),(de+i*20),(va+i*20));	//Silinen çalışanın yerine sonraki çalışan yazılarak değiştirilmesi 
+	fprintf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",*(sira+j),(ad+i*20),(sa+i*20),(ci+i*20),(de+i*20),(va+i*20));	//Silinen Ã§alÄ±ÅŸanÄ±n yazÄ±lmadan dosyanÄ±n tekrar yazÄ±lmasÄ±
 	i++;
 	j++;
 	}
@@ -284,7 +284,7 @@ void calisansil(int b){
 	i++;
 	}
 
-	printf("\n%d.Calisan Silindi.Devam Etmek Icin Bir Tusa Basin.\n",silinen);	//Kaçıncı çalışanın silindiği bilgisi
+	printf("\n%d.Calisan Silindi.Devam Etmek Icin Bir Tusa Basin.\n",silinen);	//KaÃ§Ä±ncÄ± Ã§alÄ±ÅŸanÄ±n silindiÄŸi bilgisi
     fflush(fabrika);
 	fclose(fabrika);
 	}
@@ -304,7 +304,7 @@ void calisansil(int b){
     
 	system("cls");
 	
-	printf("\nSilme Islemi Iptal Edildi.Devam Etmek Icin Bir Tusa Basin.");		//Dosya açılamaz ise silme işleminin iptal edilmesi 
+	printf("\nSilme Islemi Iptal Edildi.Devam Etmek Icin Bir Tusa Basin.");		//Dosya aÃ§Ä±lamaz ise silme iÅŸleminin iptal edilmesi 
     }
 	
 	free(ad);
@@ -318,12 +318,12 @@ void calisansil(int b){
 void secenekler(){
     char buf[BUF_LEN] = {0};
 
-    time_t rawtime = time(NULL); // Tarih ve Saat Özelliği için time.h kütüphanesi ile çalışan fonksion
+    time_t rawtime = time(NULL); // Tarih ve Saat Ã–zelliÄŸi iÃ§in time.h kÃ¼tÃ¼phanesi ile Ã§alÄ±ÅŸan fonksion
 
     if (rawtime == -1) {
         puts("The time() function failed");
     }
-    struct tm *ptm = localtime(&rawtime);		//Programın çalıştırıldığı bölgeye göre zaman diliminin ayarlanması
+    struct tm *ptm = localtime(&rawtime);		//ProgramÄ±n Ã§alÄ±ÅŸtÄ±rÄ±ldÄ±ÄŸÄ± bÃ¶lgeye gÃ¶re zaman diliminin ayarlanmasÄ±
 
     if (ptm == NULL) {
         puts("The localtime() function failed");
@@ -333,9 +333,9 @@ void secenekler(){
 	printf("\n\t\t\t************************************************************\n");
 	memset(buf, 0, BUF_LEN);
 	strftime(buf, BUF_LEN, "\t\t\t***\t\t\t\t       Tarih: %d.%m.%Y ***", ptm); 
-	 puts(buf);  // Tarihin ekrana yazılması
+	 puts(buf);  // Tarihin ekrana yazÄ±lmasÄ±
 	strftime(buf, BUF_LEN, "\t\t\t***\t\t\t\t          Saat: %X ***", ptm);
-	 puts(buf); // Saatin ekrana yazılması
+	 puts(buf); // Saatin ekrana yazÄ±lmasÄ±
 	printf("\t\t\t***\t\t       FABRIKA-DEPO                \t ***\n");
     printf("\t\t\t***\t\t        OTOMASYONU                 \t ***\n");
     printf("\t\t\t***                                   \t\t\t ***\n");
@@ -343,7 +343,7 @@ void secenekler(){
     printf("\t\t\t***\t                                    \t\t ***\n");
 	printf("\t\t\t***\t       2-) Kisi Sil                \t\t ***\n");
     printf("\t\t\t***\t                                    \t\t ***\n");
-	printf("\t\t\t***\t       3-) Kisileri Listele        \t\t ***\n");		//Menü tuşlarının oluşturulması 
+	printf("\t\t\t***\t       3-) Kisileri Listele        \t\t ***\n");		//MenÃ¼ tuÅŸlarÄ±nÄ±n oluÅŸturulmasÄ± 
     printf("\t\t\t***\t                                    \t\t ***\n");
     printf("\t\t\t***\t       4-) Urun Ekle               \t\t ***\n");
 	printf("\t\t\t***\t                                    \t\t ***\n");
@@ -376,21 +376,21 @@ void stokekle(int b){
 	printf("**Fiyat :"); 
 	 scanf("%s",c);
 
-    while(kontrol(c)==0){	//Girilen değerin sayı olup olmadığının kontrolü
+    while(kontrol(c)==0){	//Girilen deÄŸerin sayÄ± olup olmadÄ±ÄŸÄ±nÄ±n kontrolÃ¼
      
 	    printf("\t* Lutfen Gecerli Deger Giriniz :");
         scanf("%s",c);
     }
 
-	*(asb)=atof(c);		//Float değere döndürülmesi 
+	*(asb)=atof(c);		//Float deÄŸere dÃ¶ndÃ¼rÃ¼lmesi 
 
 	FILE *depo;
 
-	if((depo=fopen("stokbilgileri.txt","a"))!=0)		//Dosyanın ekleme modunda açılması
+	if((depo=fopen("stokbilgileri.txt","a"))!=0)		//DosyanÄ±n ekleme modunda aÃ§Ä±lmasÄ±
 	{
 
-      printf("\n\t%s\t%s\t%s\t%s\t%.f\tTL",strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),*(asb));			//Eklenen ürünün bilgilerinin ekrana yazılması
-      fprintf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",b+1,strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),*(asb));	//Eklenen ürünün bilgilerinin dosyaya yaazılması
+      printf("\n\t%s\t%s\t%s\t%s\t%.f\tTL",strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),*(asb));			//Eklenen Ã¼rÃ¼nÃ¼n bilgilerinin ekrana yazÄ±lmasÄ±
+      fprintf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",b+1,strupr(p),strupr(p+20),strupr(p+40),strupr(p+60),*(asb));	//Eklenen Ã¼rÃ¼nÃ¼n bilgilerinin dosyaya yaazÄ±lmasÄ±
 	  fflush(depo);
 	  fclose(depo);
 	  printf("\n\n\t** Urun Basarili Bir Sekilde Eklendi. **");
@@ -398,7 +398,7 @@ void stokekle(int b){
 	else
 	{
 	
-	printf("Dosya Bulunamadi.");		//Dosya açılamadıysa verilen hata kodu
+	printf("Dosya Bulunamadi.");		//Dosya aÃ§Ä±lamadÄ±ysa verilen hata kodu
 	}  
 	
 	free(p);
@@ -428,7 +428,7 @@ void stoksil(int a){
 	printf("\t***  Silinecek Urun Numarasi  :  ");
 	scanf("%s",sil);
 	
-	while(kontrol(sil)==0 || atoi(sil)<0 ||atoi(sil)>a)		//Girilen değerde ürün var mı kontrolü yapılması 
+	while(kontrol(sil)==0 || atoi(sil)<0 ||atoi(sil)>a)		//Girilen deÄŸerde Ã¼rÃ¼n var mÄ± kontrolÃ¼ yapÄ±lmasÄ± 
 	{
 	
 	printf("Lutfen Gecerli Bir Urun Numarasi Giriniz  :");
@@ -445,7 +445,7 @@ void stoksil(int a){
 
 	while(!feof(depo)){
 
-	fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",(sira+i),(ma+i*20),(se+i*20),(mo+i*20),(re+i*20),(fiyat+i));		//Verilerin dosyadan alınması
+	fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",(sira+i),(ma+i*20),(se+i*20),(mo+i*20),(re+i*20),(fiyat+i));		//Verilerin dosyadan alÄ±nmasÄ±
 
 	i++;
 	}
@@ -462,7 +462,7 @@ void stoksil(int a){
 	while((i+1)!=silinen && i<a)
 	{
 	
-	fprintf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",*(sira+j),(ma+i*20),(se+i*20),(mo+i*20),(re+i*20),*(fiyat+i));	//Verilerin silinen ürünün üzerine yazılacak şekilde kaydırılması
+	fprintf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",*(sira+j),(ma+i*20),(se+i*20),(mo+i*20),(re+i*20),*(fiyat+i));	//Verilerin silinen Ã¼rÃ¼n yazÄ±lmadan tekrar aynÄ± dosya Ã¼zerine yazÄ±lmasÄ±
 	i++;
 	j++;
 	}
@@ -470,7 +470,7 @@ void stoksil(int a){
 
 	}
 
-	printf("\n%d.Urun Silindi.Devam Etmek Icin Bir Tusa Basin.\n",silinen);		//Kaçıncı ürünün silindiği bilgisi
+	printf("\n%d.Urun Silindi.Devam Etmek Icin Bir Tusa Basin.\n",silinen);		//KaÃ§Ä±ncÄ± Ã¼rÃ¼nÃ¼n silindiÄŸi bilgisi
     fflush(depo);
 	fclose(depo);
 	}
@@ -487,7 +487,7 @@ void stoksil(int a){
 	else{
     
 	system("cls");
-	printf("\nSilme Islemi Iptal Edildi.Devam Etmek Icin Bir Tusa Basin.");		//Dosya açılamaz ise silme işleminin iptal edilmesi 
+	printf("\nSilme Islemi Iptal Edildi.Devam Etmek Icin Bir Tusa Basin.");		//Dosya aÃ§Ä±lamaz ise silme iÅŸleminin iptal edilmesi 
     
 	}
 	
@@ -513,13 +513,13 @@ int stokbilgileri(int c){
 	
 	FILE *depo;
 	
-	if((depo=fopen("stokbilgileri.txt","r"))!=0)	//Okuma modunda dosyanın açılması
+	if((depo=fopen("stokbilgileri.txt","r"))!=0)	//Okuma modunda dosyanÄ±n aÃ§Ä±lmasÄ±
 	{
 	
 	while(!feof(depo))
 	{
 
-		fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",(sira+i),(marka+i*20),(seri+i*20),(model+i*20),(renk+i*20),(fiyat+i));		//Verilerin dosyadan alınması 
+		fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",(sira+i),(marka+i*20),(seri+i*20),(model+i*20),(renk+i*20),(fiyat+i));		//Verilerin dosyadan alÄ±nmasÄ± 
 		i++;
 		if((i+1)%20==1)
 		a++;
@@ -534,7 +534,7 @@ int stokbilgileri(int c){
 	i=0;
 	b=1;
 	
-	printf("     MARKA\t  SERI NO       MODEL\t    RENK\t     FIYAT\t\n");		//Başlıkların oluşturulması
+	printf("     MARKA\t  SERI NO       MODEL\t    RENK\t     FIYAT\t\n");		//BaÅŸlÄ±klarÄ±n oluÅŸturulmasÄ±
 	printf("     -----\t  --------      -----\t    ----\t     -----\t\n");
 	
 	while(i<c)
@@ -542,7 +542,7 @@ int stokbilgileri(int c){
 
 		if(i<b*20 && i<c)
 		{
-			printf("%d )  %-13s%-14s%-12s%-17s%-7.f\tTL\n",*(sira+i),(marka+i*20),(seri+i*20),(model+i*20),(renk+i*20),*(fiyat+i));		//Ürünlerin sıra ile yazılması
+			printf("%d )  %-13s%-14s%-12s%-17s%-7.f\tTL\n",*(sira+i),(marka+i*20),(seri+i*20),(model+i*20),(renk+i*20),*(fiyat+i));		//ÃœrÃ¼nlerin sÄ±ra ile yazÄ±lmasÄ±
 
 			i++;
 	
@@ -594,7 +594,7 @@ int stokbilgileri(int c){
 	
 		else
 		{
-		printf("\t%d.Sayfadasiniz.\t Toplam Sayfa :%d\n 1-)Onceki Sayfa\t 2-)Sonraki Sayfa\t 0-)Ana Menu\n",b,a);	//Menü tuşlarının oluşturulması
+		printf("\t%d.Sayfadasiniz.\t Toplam Sayfa :%d\n 1-)Onceki Sayfa\t 2-)Sonraki Sayfa\t 0-)Ana Menu\n",b,a);	//MenÃ¼ tuÅŸlarÄ±nÄ±n oluÅŸturulmasÄ±
 		printf("Secim Yap  :");
 		scanf("%s",secim);
 		sec=atoi(secim);
@@ -663,12 +663,12 @@ int hesapla(){
 if((fabrika=fopen("calisanbilgileri.txt","r"))!=0)
  {
 
- while(!feof(fabrika)){											//Dosyadaki toplam veri sayısını hesaplama
+ while(!feof(fabrika)){											//Dosyadaki toplam veri sayÄ±sÄ±nÄ± hesaplama
 
 	bilgi=(char*)realloc(bilgi,(sizeof(char)*20*4)*i);
 	sira=(int*)realloc(sira,(sizeof(int)*i));
 
-	fscanf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",sira,bilgi,bilgi+20,bilgi+40,bilgi+60,bilgi+80);		//Verilerin toplanması
+	fscanf(fabrika,"%d\t%s\t%s\t%s\t%s\t\t%s\n",sira,bilgi,bilgi+20,bilgi+40,bilgi+60,bilgi+80);		//Verilerin toplanmasÄ±
 
 	i++;
 }
@@ -702,12 +702,12 @@ int depohesapla(){
  if((depo=fopen("stokbilgileri.txt","r"))!=0)
  {
 
- while(!feof(depo)){											//Dosyadaki toplam veri sayısını hesaplama
+ while(!feof(depo)){											//Dosyadaki toplam veri sayÄ±sÄ±nÄ± hesaplama
 
 	bilgi=(char*)realloc(bilgi,(sizeof(char)*20*4)*i);
 	sira=(int*)realloc(sira,(sizeof(int)*i));
 
-	fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",sira,bilgi,bilgi+20,bilgi+40,bilgi+60, sbilgi);	//Verilerin toplanması
+	fscanf(depo,"%d\t%s\t%s\t%s\t%s\t%f\t\n",sira,bilgi,bilgi+20,bilgi+40,bilgi+60, sbilgi);	//Verilerin toplanmasÄ±
 	i++;
 }
 }
@@ -725,7 +725,7 @@ fflush(depo);
 }
 
 int main(){
-	system("COLOR 8B");		//Arkaplan ve metin renginin ayarlanması
+	system("COLOR 8B");		//Arkaplan ve metin renginin ayarlanmasÄ±
 	
 	int secim=1, b, d, secim1;
 	char s[10],s1[10];
@@ -734,7 +734,7 @@ int main(){
 
 	FILE *fabrika;
 
-	if((depo=fopen("stokbilgileri.txt","a"))!=0){		//Dosya yoksa eklemek varsa verileri silmeden işleme devam etmesi için a modunda açılıyor 
+	if((depo=fopen("stokbilgileri.txt","a"))!=0){		//Dosya yoksa eklemek varsa verileri silmeden iÅŸleme devam etmesi iÃ§in a modunda aÃ§Ä±lÄ±yor 
 		
   fclose(depo);
 } 
@@ -743,7 +743,7 @@ else{
     printf("Dosya yok");
 }
 
-if((fabrika=fopen("calisanbilgileri.txt","a"))!=0){		//Dosya yoksa eklemek varsa verileri silmeden işleme devam etmesi için a modunda açılıyor 
+if((fabrika=fopen("calisanbilgileri.txt","a"))!=0){		//Dosya yoksa eklemek varsa verileri silmeden iÅŸleme devam etmesi iÃ§in a modunda aÃ§Ä±lÄ±yor 
 	
   fclose(fabrika);
 } 
@@ -763,7 +763,7 @@ else{
     secenekler();
 	scanf("%s",s);
 
-	while(kontrol(s)==0 || (0>atoi(s) || atoi(s)>6)){		//Menü ekranındaki seçeneklerden birinin seçilip seçilmediğinin kontrol edilmesi
+	while(kontrol(s)==0 || (0>atoi(s) || atoi(s)>6)){		//MenÃ¼ ekranÄ±ndaki seÃ§eneklerden birinin seÃ§ilip seÃ§ilmediÄŸinin kontrol edilmesi
             printf("\nLutfen Dogru Bir Deger giriniz :");
             scanf("%s",s);
              }
@@ -772,14 +772,14 @@ else{
 	secim=atoi(s);
     system("cls");
 
-	if(secim==1)		//1. seçenek seçildiyse çalışan ekleme fonksiyonunun çağırılması
+	if(secim==1)		//1. seÃ§enek seÃ§ildiyse Ã§alÄ±ÅŸan ekleme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 		calisanekle(b);		
 		getch();
 		break;
 	}
 
-	else if(secim==2)  //2. seçenek seçildiyse çalışan silme fonksiyonunun çağırılması
+	else if(secim==2)  //2. seÃ§enek seÃ§ildiyse Ã§alÄ±ÅŸan silme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 		if(b==0)
 		{
@@ -794,7 +794,7 @@ else{
 		break;
 	}
 
-	else if(secim==3)	//3. seçenek seçildiyse çalışan listeleme fonksiyonunun çağırılması
+	else if(secim==3)	//3. seÃ§enek seÃ§ildiyse Ã§alÄ±ÅŸan listeleme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 		if(b==0)
 		{
@@ -809,14 +809,14 @@ else{
 		 getch();
 		break;
 	}
-	else if(secim==4)	//4. seçenek seçildiyse stok ekleme fonksiyonunun çağırılması
+	else if(secim==4)	//4. seÃ§enek seÃ§ildiyse stok ekleme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 
 		stokekle(d);
         getch();
 		break;
 	}
-	else if(secim==5)	//5. seçenek seçildiyse stok silme fonksiyonunun çağırılması
+	else if(secim==5)	//5. seÃ§enek seÃ§ildiyse stok silme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 		if(d==0)
 		{
@@ -831,7 +831,7 @@ else{
 		getch();
 		break;
 	}
-	else if(secim==6)	//6. seçenek seçildiyse stok listeleme fonksiyonunun çağırılması
+	else if(secim==6)	//6. seÃ§enek seÃ§ildiyse stok listeleme fonksiyonunun Ã§aÄŸÄ±rÄ±lmasÄ±
 	{
 	
 		if(d==0){
